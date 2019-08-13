@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo effect</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+	<script type="text/javascript">
+		$(document).ready(function($){
+			$("#btnRun").click(function(event){
+				//$("#myInfo").slideUp();
+				var effect = $("#effectType").val();
+				$("#myInfo").effect(effect,{},500,callback);
+			});
+		});
+
+		  $( function() {
+		    $( "#dialog" ).dialog({
+		      autoOpen: false,
+		      show: {
+		        effect: "blind",
+		        duration: 500
+		      },
+		      hide: {
+		        effect: "explode",
+		        duration: 500
+		      }
+		    });
+		 
+		    $( "#opener" ).on( "click", function() {
+		      $( "#dialog" ).dialog( "open" );
+		    });
+		  } );
+		
+		function callback(){
+			$("#dialog").dialog("open");
+		};
+	</script>
+</head>
+<body>
+	<div id="myInfo">
+		<h1>Hello</h1>
+		<p>LEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGSSSSSSSSSSSSSSSSSSSSSSSSSSS</p>
+		<p>MOMMY</p>
+	</div>
+	<select id="effectType">
+		<option value="blind">Blind</option>
+		<option value="bounce">Bounce</option>
+		<option value="clip">Clip</option>
+		<option value="drop">Drop</option>
+		<option value="explode">Explode</option>
+	</select>
+	<div id="dialog" title="DO IT">
+	  <p>TOUCH THE LEGSSSS</p>
+	</div>
+	<input type="button" value="Run effect" id="btnRun">
+</body>
+</html>
