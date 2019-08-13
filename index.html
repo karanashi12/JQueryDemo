@@ -8,8 +8,18 @@
 		$(document).ready(function(){
 			//alert(Done loading)
 			//Dang ky su kien button click
-			$("#btn0k").click(function(event){
-				alert("OK THEN!");
+			$("#btnOk").click(function(event){
+				//alert("OK THEN!");
+				//lay gia tri cua textbox
+				var name = $("#txtName").val();
+				alert("Hi "+name);
+				$("#txtName").css('display', 'none');
+			});
+			$("#btnOk2").click(function(event){
+				$("#txtName").css({
+					display: 'inline',
+					color: 'orange'
+				});
 			});
 		});
 	</script>
@@ -17,7 +27,8 @@
 <body>
 <form>
 	<input type="text" name="" id="txtName">
-	<input type="button" name="OK" value="btnOK">
+	<input type="button" name="OK" value="btnOk">
+	<input type="button" name="OK2" value="btnOk2">
 </form>
 </body>
 </html>
